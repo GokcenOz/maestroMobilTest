@@ -1,0 +1,40 @@
+appId: com.protel.waiter.qa
+---
+- launchApp
+- runFlow: login.yaml # <-- Run commands from "login.yaml"
+- tapOn: "Çek oluştur, Masa Numarası"
+- tapOn:
+    id: "id"
+- inputText: "8"
+- pressKey: Enter
+- inputText: "4"
+- pressKey: Enter
+- tapOn: "Food"
+- tapOn: "Kahvaltılar"
+- tapOn:
+    id: "product-item-add-button"
+    index: 0
+- assertVisible:
+    id: "products-action-bar"
+- tapOn:
+    id: "products-action-bar"
+- assertVisible: "Bunları önerdiniz mi?"
+- tapOn:
+    id: "products-action-bar"
+- tapOn: "Ödeme"
+- tapOn: "Room Charge (MAGIST)"
+- tapOn: "Oda no. veya misafir soyadı ile arama yapın"
+- inputText: "OZSOY"
+- tapOn: "GOKCEN OZSOY"
+- assertVisible: "Odaya Gönder"
+- tapOn: "Odaya Gönder"
+- assertVisible: "Emin misiniz?"
+- tapOn: "Evet, Devam Et"
+- assertVisible: "Ödeme Tamamlandı"
+- tapOn: "Tamam"
+- assertVisible: "Fine Dining"
+- back
+- back
+- tapOn:
+    point: "6%,6%"
+- assertVisible: "Oturum Açın"

@@ -1,0 +1,19 @@
+appId: com.protel.waiter.qa
+---
+- launchApp
+- runFlow: login.yaml 
+- tapOn: "Çek getir, Masa Numarası"
+- tapOn:
+    id: "id"
+- inputText: "43"
+- pressKey: Enter
+- assertVisible: "Çek bulunamadı"
+- assertVisible: "Çek adını kontrol edin ve tekrar deneyin."
+- tapOn: "Tamam"
+- back
+- back
+- tapOn:
+    point: "6%,6%"
+- assertVisible: "Oturum Açın"
+
+

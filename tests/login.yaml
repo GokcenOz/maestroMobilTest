@@ -1,0 +1,23 @@
+appId: com.protel.waiter.qa
+---
+- launchApp
+- assertVisible: "Protel Waiter"
+- tapOn:
+    id: "username"
+- eraseText
+- inputText: "etokatli+procafe@protel.com.tr"
+- tapOn:
+    id: "password"
+- eraseText
+- inputText: "********" #enter password
+- tapOn:
+    text: "Giriş"
+- tapOn:
+    text: "Türkçe (TR)"
+- tapOn:
+    text: "Devam Et"
+- tapOn: "Fine Dining"
+- tapOn: "1"
+- tapOn:
+    id: "submit-button"
+- assertVisible: "Fine Dining"
